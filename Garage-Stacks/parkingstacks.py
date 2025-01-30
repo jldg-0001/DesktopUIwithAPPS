@@ -17,19 +17,13 @@ class ParkingGarage:
         # Set window dimensions
         window_width = 850
         window_height = 875
-
-        # Get screen width and height
         screen_width = root.winfo_screenwidth()
         screen_height = root.winfo_screenheight()
-
-        # Calculate position x and y to center the window
         position_x = (screen_width // 2) - (window_width // 2)
         position_y = (screen_height // 2) - (window_height // 2)
 
         # Set up GUI
         root.title("Parking Garage - Stacks")
-
-        # Set window geometry with calculated position
         root.geometry(f"{window_width}x{window_height}+{position_x}+{position_y}")
 
         # Set Main Window Icon
@@ -74,8 +68,6 @@ class ParkingGarage:
 
         # Load and resize the background image
         self.background_image = self.load_and_resize_background("bgcanva.png", 800, 800)
-
-        # Display the background image on the canvas with tag
         self.canvas.create_image(0, 0, image=self.background_image, anchor="nw", tags="background")
 
         # Load and resize vehicle images
@@ -136,7 +128,7 @@ class ParkingGarage:
                                 font=("Press Start 2P", 10, "bold"), fill="white", tags="stack")
 
         # Load and resize the image for the exit button
-        self.exit_icon = self.load_and_resize_image("exiticon.png", 35)  # Adjust size as needed
+        self.exit_icon = self.load_and_resize_image("exiticon.png", 35)
 
         # Exit Button with image
         self.exit_button = tk.Button(root, image=self.exit_icon, command=root.quit, borderwidth=0, bg="white")

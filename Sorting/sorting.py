@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import matplotlib.image as mpimg
 import tkinter as tk
 from tkinter import messagebox
@@ -24,9 +23,6 @@ def draw_bars_with_labels(arr, step):
     
     for i, val in enumerate(arr):
         plt.text(i, val + 0.5, str(val), ha='center', va='bottom', fontsize=9, color='black')
-    
-    # Set y-ticks to include 0, 20, 40, 60, 80, and 100
-    plt.yticks(np.arange(0, 101, 20))  # Adds 100 to the list of y-ticks
 
     # Set x-ticks starting from 5 and jumping between the bars
     tick_positions = [4, 9, 14, 19, 24, 29]  # Indices corresponding to 5, 10, 15, 20, 25, 30

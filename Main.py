@@ -49,11 +49,11 @@ canvas.create_image(0, 0, image=bg_image_tk, anchor="nw")
 buttons_info = [
     {'image': 'icon1.png', 'script_folder': 'Tic-tac-toe', 'script_name': 'tictactoe.py'},
     {'image': 'icon2.png', 'script_folder': 'Garage-Stacks', 'script_name': 'parkingstacks.py'},
-    {'image': 'icon3.png', 'script_folder': 'folder3', 'script_name': 'script3.py'},
+    {'image': 'icon3.png', 'script_folder': 'Garage-Queue', 'script_name': 'parkingqueue.py'},
     {'image': 'icon4.png', 'script_folder': 'Binary-Traversal', 'script_name': 'binarytraversal.py'},
     {'image': 'icon5.png', 'script_folder': 'Binary-Search', 'script_name': 'binarysearch.py'},
     {'image': 'icon6.png', 'script_folder': 'Hanoi', 'script_name': 'hanoi.py'},
-    {'image': 'icon7.png', 'script_folder': 'folder7', 'script_name': 'script7.py'},
+    {'image': 'icon7.png', 'script_folder': 'Sorting', 'script_name': 'sorting.py'},
 ]
 
 # Function to create buttons dynamically
