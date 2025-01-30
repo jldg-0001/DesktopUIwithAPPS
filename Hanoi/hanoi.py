@@ -210,8 +210,7 @@ class TowerOfHanoiApp:
         self.update_status()
 
     def solve(self):
-        """Starts solving the Tower of Hanoi."""
-        self.poles[0].sort(reverse=True)
+        """Starts solving the Tower of Hanoi with respect to sorted or unsorted starting order."""
         self.draw_poles_and_disks()
 
         # Start the timer
@@ -219,21 +218,27 @@ class TowerOfHanoiApp:
         self.timer_running = True
         self.update_time()
 
-        # Solve using recursion
+        # Solve in sorted order regardless of initial order
         self.hanoi(len(self.poles[0]), 0, 2, 1)
 
         # Stop the timer once solved
         self.timer_running = False
 
     def hanoi(self, n, from_pole, to_pole, aux_pole):
-        """Recursive function to solve Tower of Hanoi."""
+        """Solves the Tower of Hanoi while ensuring Pole 3 is sorted."""
         if n == 1:
-            self.move_disk(from_pole, to_pole)
+            self.move_disk(from_pole, to_pole)  # Just move the disk normally
             time.sleep(0.5)
             return
+
+        # Move n-1 disks to auxiliary pole
         self.hanoi(n - 1, from_pole, aux_pole, to_pole)
+
+        # Move the nth (largest) disk to destination
         self.move_disk(from_pole, to_pole)
         time.sleep(0.5)
+
+        # Move n-1 disks from auxiliary pole to destination
         self.hanoi(n - 1, aux_pole, to_pole, from_pole)
 
     def generate_hanoi_steps(self, n, from_pole, to_pole, aux_pole):
