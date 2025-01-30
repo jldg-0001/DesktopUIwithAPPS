@@ -468,6 +468,7 @@ class ParkingGarage:
         # Delete the target car's image and label from stack1
         self.canvas.delete(f"vehicle_{target}")
         self.canvas.delete(f"label_{target}")
+        self.canvas.delete(f"label_bg_{target}")
 
 
 # Main Program

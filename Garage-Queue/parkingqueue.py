@@ -362,7 +362,7 @@ class ParkingQueue:
 
         # Only allow removal if the entered vehicle matches the first slot
         if target != self.queue1[0]:
-            messagebox.showerror("Error", "Only the first vehicle in the queue can be removed.")
+            messagebox.showerror("Error", "Only the first vehicle in the parking garage can be removed.")
             return
 
         # Only allow removal of the first vehicle
@@ -404,6 +404,7 @@ class ParkingQueue:
         # Delete the target car's image and label from stack1
         self.canvas.delete(f"vehicle_{target}")
         self.canvas.delete(f"label_{target}")
+        self.canvas.delete(f"label_bg_{target}")
 
         self.update_visualization1()
         self.set_layering()
